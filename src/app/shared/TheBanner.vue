@@ -1,31 +1,41 @@
 <template>
-  <TheBanner />
+  <div class="banner">
+    <h1 class="banner__title">{{ title }}</h1>
+    <h2 class="banner__subTitle">{{ subTitle }}</h2>
+  </div>
 </template>
 
 <script setup>
-import TheBanner from "../app/shared/TheBanner.vue";
+import { computed } from "vue";
+import { useStore } from "vuex";
+
+const store = useStore();
+
+const title = computed(() => store.getters["bannerStore/getTitle"]);
+const subTitle = computed(() => store.getters["bannerStore/getSubTitle"]);
 </script>
 
 <style scoped>
-.home {
+.banner {
   padding: 2rem 1.5;
   text-align: center;
 }
-.home__title {
+.banner__title {
   font-size: 3.6rem;
-  font-weight: normal;
+  font-weight: 300;
   line-height: 1;
-  color: orange;
+  color: goldenrod;
   letter-spacing: 0.2rem;
   text-shadow: -0.1rem -0.1rem 0 black, 0.1rem -0.1rem 0 black,
     -0.1rem 0.1rem 0 black, 0.1rem 0.1rem 0 black;
 }
-.home__subTitle {
+.banner__subTitle {
   margin-top: 5rem;
 
   font-size: 3.4rem;
   line-height: 1;
-  color: white;
+  color: maroon;
+  font-weight: 100;
   letter-spacing: 0.3rem;
   text-shadow: -0.1rem -0.1rem 0 black, 0.1rem -0.1rem 0 black,
     -0.1rem 0.1rem 0 black, 0.1rem 0.1rem 0 black;
