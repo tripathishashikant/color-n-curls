@@ -1,5 +1,7 @@
 import { createStore } from "vuex";
-import bannerStore from "./bannerStore";
+import bannerStore from "./banner";
+import loginStore from "./login";
+import customerStore from "./customer";
 
 const mainState = {};
 
@@ -16,6 +18,8 @@ const store = createStore({
   actions,
   modules: {
     bannerStore,
+    loginStore,
+    customerStore,
   },
 });
 

@@ -6,6 +6,13 @@
       "email": "shashi@gmail.com",
       "dob": "10-12-1990",
       "password": "pwd"
+    },
+    {
+      "name": "shashi",
+      "password": "10Dec@1990",
+      "email": "beck.tripathi@gmail.com",
+      "dob": "1990-12-10",
+      "id": 2
     }
   ],
   "specialities": [
@@ -36,140 +43,300 @@
       "name": "John",
       "experience": 3,
       "specialization": "Haircut",
-      "availableDays": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+      "availableDays": [
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri",
+        "Sat",
+        "Sun"
+      ]
     },
     {
       "id": 2,
       "name": "Alice",
       "experience": 5,
       "specialization": "Hair Color",
-      "availableDays": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+      "availableDays": [
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri",
+        "Sat",
+        "Sun"
+      ]
     },
     {
       "id": 3,
       "name": "Emily",
       "experience": 4,
       "specialization": "Pedicure",
-      "availableDays": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+      "availableDays": [
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri",
+        "Sat",
+        "Sun"
+      ]
     },
     {
       "id": 4,
       "name": "Michael",
       "experience": 6,
       "specialization": "Manicure",
-      "availableDays": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+      "availableDays": [
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri",
+        "Sat",
+        "Sun"
+      ]
     },
     {
       "id": 5,
       "name": "Sophia",
       "experience": 2,
       "specialization": "Facial",
-      "availableDays": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+      "availableDays": [
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri",
+        "Sat",
+        "Sun"
+      ]
     },
     {
       "id": 6,
       "name": "David",
       "experience": 3,
       "specialization": "Haircut",
-      "availableDays": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+      "availableDays": [
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri",
+        "Sat",
+        "Sun"
+      ]
     },
     {
       "id": 7,
       "name": "Olivia",
       "experience": 5,
       "specialization": "Hair Color",
-      "availableDays": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+      "availableDays": [
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri",
+        "Sat",
+        "Sun"
+      ]
     },
     {
       "id": 8,
       "name": "William",
       "experience": 4,
       "specialization": "Pedicure",
-      "availableDays": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+      "availableDays": [
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri",
+        "Sat",
+        "Sun"
+      ]
     },
     {
       "id": 9,
       "name": "Emma",
       "experience": 6,
       "specialization": "Manicure",
-      "availableDays": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+      "availableDays": [
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri",
+        "Sat",
+        "Sun"
+      ]
     },
     {
       "id": 10,
       "name": "James",
       "experience": 2,
       "specialization": "Facial",
-      "availableDays": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+      "availableDays": [
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri",
+        "Sat",
+        "Sun"
+      ]
     },
     {
       "id": 11,
       "name": "Liam",
       "experience": 3,
       "specialization": "Haircut",
-      "availableDays": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+      "availableDays": [
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri",
+        "Sat",
+        "Sun"
+      ]
     },
     {
       "id": 12,
       "name": "Ava",
       "experience": 5,
       "specialization": "Hair Color",
-      "availableDays": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+      "availableDays": [
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri",
+        "Sat",
+        "Sun"
+      ]
     },
     {
       "id": 13,
       "name": "Benjamin",
       "experience": 4,
       "specialization": "Pedicure",
-      "availableDays": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+      "availableDays": [
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri",
+        "Sat",
+        "Sun"
+      ]
     },
     {
       "id": 14,
       "name": "Mia",
       "experience": 6,
       "specialization": "Manicure",
-      "availableDays": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+      "availableDays": [
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri",
+        "Sat",
+        "Sun"
+      ]
     },
     {
       "id": 15,
       "name": "Ethan",
       "experience": 2,
       "specialization": "Facial",
-      "availableDays": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+      "availableDays": [
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri",
+        "Sat",
+        "Sun"
+      ]
     },
     {
       "id": 16,
       "name": "Sophia",
       "experience": 3,
       "specialization": "Haircut",
-      "availableDays": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+      "availableDays": [
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri",
+        "Sat",
+        "Sun"
+      ]
     },
     {
       "id": 17,
       "name": "Alexander",
       "experience": 5,
       "specialization": "Hair Color",
-      "availableDays": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+      "availableDays": [
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri",
+        "Sat",
+        "Sun"
+      ]
     },
     {
       "id": 18,
       "name": "Charlotte",
       "experience": 4,
       "specialization": "Pedicure",
-      "availableDays": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+      "availableDays": [
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri",
+        "Sat",
+        "Sun"
+      ]
     },
     {
       "id": 19,
       "name": "Daniel",
       "experience": 6,
       "specialization": "Manicure",
-      "availableDays": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+      "availableDays": [
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri",
+        "Sat",
+        "Sun"
+      ]
     },
     {
       "id": 20,
       "name": "Luna",
       "experience": 2,
       "specialization": "Facial",
-      "availableDays": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+      "availableDays": [
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri",
+        "Sat",
+        "Sun"
+      ]
     }
   ],
   "appointments": [
