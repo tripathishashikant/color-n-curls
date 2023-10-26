@@ -1,11 +1,12 @@
 .errors__title {
   margin: 0;
-  font-size: 1.2rem;
+  
+  font-size: 1rem;
   color:red;
-  text-align: center;
 }
 
 .errors__source {
+  font-size:1.2rem;
   color:red;
   border-color:red;
 }
@@ -13,6 +14,7 @@
 .error__ribbon {
   padding: 1rem;
 
+  font-size:1.4rem;
   color: red;
   border: maroon;
   background-color: #d39576;

@@ -2,9 +2,14 @@
   <div class="register">
     <div class="register__wrapper">
       <h2 class="register__title">{{ REGISTER.TITLE }}</h2>
+      <div class="register__infoWrapper">
+        <p v-if="isCustomerAdded" class="register__info info__ribbon">
+          {{ INFO.REGISTER_SUCCESSFULLY }}
+        </p>
+      </div>
       <div class="register__errorWrapper">
         <p v-if="isServiceError" class="register__error error__ribbon">
-          Service error while adding customer data. Please try again!
+          {{ ERRORS.SERVICE_UNAVAILABLE }}
         </p>
       </div>
       <div class="register__formWrapper">
@@ -27,13 +32,13 @@
             </label>
             <div class="register__errors">
               <p class="errors__title" v-show="validation.name.required">
-                This field is required.
+                {{ ERRORS.REQUIRED }}
               </p>
               <p class="errors__title" v-if="validation.name.maxLength">
-                This field can have a maximum of 30 characters.
+                {{ ERRORS.MAX_LENGTH_30 }}
               </p>
               <p class="errors__title" v-if="validation.name.characters">
-                This field support only alphabets and spaces.
+                {{ ERRORS.ONLY_ALPHABET_SPACE }}
               </p>
             </div>
           </div>
@@ -55,19 +60,19 @@
             </label>
             <div class="register__errors">
               <p class="errors__title" v-show="validation.password.required">
-                This field is required.
+                {{ ERRORS.REQUIRED }}
               </p>
               <p class="errors__title" v-if="validation.password.minLength">
-                This field should have a length of 6 characters.
+                {{ ERRORS.MIN_LENGTH_6 }}
               </p>
               <p class="errors__title" v-if="validation.password.upperCase">
-                This field should have atleast 1 uppercase character.
+                {{ ERRORS.MIN_1_UPPERCASE }}
               </p>
               <p class="errors__title" v-if="validation.password.lowerCase">
-                This field should have atleast 1 lowercase characters.
+                {{ ERRORS.MIN_1_LOWERCASE }}
               </p>
               <p class="errors__title" v-if="validation.password.characters">
-                This field should atleast have a specidal charaters.
+                {{ ERRORS.MIN_1_SPECIAL_CHAR }}
               </p>
             </div>
           </div>
@@ -89,10 +94,10 @@
             </label>
             <div class="register__errors">
               <p class="errors__title" v-show="validation.email.required">
-                This field is required.
+                {{ ERRORS.REQUIRED }}
               </p>
               <p class="errors__title" v-if="validation.email.format">
-                Please enter valid email format.
+                {{ ERRORS.VALID_EMAIL_FORMAT }}
               </p>
             </div>
           </div>
@@ -114,10 +119,10 @@
             </label>
             <div class="register__errors">
               <p class="errors__title" v-show="validation.dob.required">
-                This field is required.
+                {{ ERRORS.REQUIRED }}
               </p>
               <p class="errors__title" v-if="validation.dob.format">
-                Please enter date in 'dd-mm-yyyy' format.
+                {{ ERRORS.VALID_DATE_FORMAT }}
               </p>
             </div>
           </div>
@@ -145,7 +150,7 @@
 <script setup>
 import { ref, reactive, defineEmits, computed } from "vue";
 import { useStore } from "vuex";
-import { REGISTER } from "../../constants/pages";
+import { REGISTER, ERRORS, INFO } from "../../constants/pages";
 
 const emit = defineEmits(["openLoginPage"]);
 
@@ -213,13 +218,13 @@ const isServiceError = computed(
   () => store.getters["customerStore/serviceError"]
 );
 
-// const isButtonDisabled = computed(() => submitted.value);
+const isCustomerAdded = computed(
+  () => store.getters["customerStore/isCustomerAdded"]
+);
 
 // methods
 const validateName = () => {
   const regex = /^[A-Za-z ]*$/;
-
-  console.log("name ", formFields.name);
 
   if (formFields.name === null) {
     validation.name.required = true;
@@ -297,6 +302,8 @@ const clearFormFields = () => {
 
 const openLoginModule = () => {
   clearFormFields();
+  store.dispatch("customerStore/setServiceError", false);
+  store.dispatch("customerStore/setIsCustomerAdded", false);
   emit("openLoginPage");
 };
 
@@ -358,7 +365,7 @@ const register = () => {
   width: 100%;
 }
 .register__btnWrapper {
-  padding-bottom: 2rem;
+  margin: 2rem 0;
   text-align: center;
 }
 .register__btn {

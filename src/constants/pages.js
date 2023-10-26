@@ -32,6 +32,19 @@ const BOOKED_APPOINTMENT = {
 const ERRORS = {
   INVALID_USER: "Invalid User!",
   SERVICE_UNAVAILABLE: "Service Unavailable. Please try again after sometime!",
+  REQUIRED: "This field is required.",
+  MAX_LENGTH_30: "This field can have a maximum of 30 characters.",
+  MIN_LENGTH_6: "This field should have a length of 6 characters.",
+  ONLY_ALPHABET_SPACE: "This field support only alphabets and spaces.",
+  MIN_1_UPPERCASE: "This field should have atleast 1 uppercase character.",
+  MIN_1_LOWERCASE: "This field should have atleast 1 lowercase characters.",
+  MIN_1_SPECIAL_CHAR: "This field should atleast have a specidal character.",
+  VALID_EMAIL_FORMAT: "Please enter valid email format.",
+  VALID_DATE_FORMAT: "Please enter date in 'dd-mm-yyyy' format.",
+};
+
+const INFO = {
+  REGISTER_SUCCESSFULLY: "Customer register successfully!",
 };
 
 export {
@@ -42,4 +55,5 @@ export {
   BOOK_APPOINTMENT,
   BOOKED_APPOINTMENT,
   ERRORS,
+  INFO,
 };

@@ -1,351 +1,293 @@
 {
   "customer": [
     {
-      "id": 1,
-      "name": "shashi",
-      "email": "shashi@gmail.com",
-      "dob": "10-12-1990",
-      "password": "pwd"
-    },
-    {
-      "name": "shashi",
-      "password": "10Dec@1990",
-      "email": "beck.tripathi@gmail.com",
-      "dob": "1990-12-10",
-      "id": 2
+      "name": "Penny",
+      "password": "Abc@123",
+      "email": "abc@ggg.com",
+      "dob": "2011-03-09",
+      "id": 1
     }
   ],
-  "specialities": [
+  "speciality": [
     {
       "id": 1,
-      "name": "Haircut"
+      "speciality": "Haircut"
     },
     {
       "id": 2,
-      "name": "Hair Color"
+      "speciality": "Hair Color"
     },
     {
       "id": 3,
-      "name": "Pedicure"
+      "speciality": "Pedicure"
     },
     {
       "id": 4,
-      "name": "Manicure"
+      "speciality": "Manicure"
     },
     {
       "id": 5,
-      "name": "Facial"
+      "speciality": "Facial"
     }
   ],
   "stylist": [
     {
       "id": 1,
-      "name": "John",
-      "experience": 3,
-      "specialization": "Haircut",
-      "availableDays": [
-        "Mon",
-        "Tue",
-        "Wed",
-        "Thu",
-        "Fri",
-        "Sat",
-        "Sun"
-      ]
+      "name": "Anne",
+      "experience": 5,
+      "speciality": "Pedicure",
+      "available": {
+        "mon": 3,
+        "tues": 5,
+        "wed": 3,
+        "thr": 5,
+        "fri": 5
+      }
     },
     {
       "id": 2,
-      "name": "Alice",
-      "experience": 5,
-      "specialization": "Hair Color",
-      "availableDays": [
-        "Mon",
-        "Tue",
-        "Wed",
-        "Thu",
-        "Fri",
-        "Sat",
-        "Sun"
-      ]
+      "name": "Percy",
+      "experience": 3,
+      "speciality": "Facial",
+      "available": {
+        "mon": 5,
+        "tues": -1,
+        "wed": 4,
+        "thr": 2,
+        "fri": 5
+      }
     },
     {
       "id": 3,
-      "name": "Emily",
-      "experience": 4,
-      "specialization": "Pedicure",
-      "availableDays": [
-        "Mon",
-        "Tue",
-        "Wed",
-        "Thu",
-        "Fri",
-        "Sat",
-        "Sun"
-      ]
+      "name": "Leo",
+      "experience": 8,
+      "speciality": "Manicure",
+      "available": {
+        "mon": 5,
+        "tues": 5,
+        "wed": 4,
+        "thr": 4,
+        "fri": 5
+      }
     },
     {
       "id": 4,
-      "name": "Michael",
-      "experience": 6,
-      "specialization": "Manicure",
-      "availableDays": [
-        "Mon",
-        "Tue",
-        "Wed",
-        "Thu",
-        "Fri",
-        "Sat",
-        "Sun"
-      ]
+      "name": "Rick",
+      "experience": 1,
+      "speciality": "Hair Color",
+      "available": {
+        "mon": 5,
+        "tues": 3,
+        "wed": 5,
+        "thr": 5,
+        "fri": 5
+      }
     },
     {
       "id": 5,
-      "name": "Sophia",
-      "experience": 2,
-      "specialization": "Facial",
-      "availableDays": [
-        "Mon",
-        "Tue",
-        "Wed",
-        "Thu",
-        "Fri",
-        "Sat",
-        "Sun"
-      ]
+      "name": "Rick",
+      "experience": 9,
+      "speciality": "Haircut",
+      "available": {
+        "mon": 5,
+        "tues": 3,
+        "wed": 5,
+        "thr": 4,
+        "fri": 5
+      }
     },
     {
       "id": 6,
-      "name": "David",
+      "name": "Apollo",
       "experience": 3,
-      "specialization": "Haircut",
-      "availableDays": [
-        "Mon",
-        "Tue",
-        "Wed",
-        "Thu",
-        "Fri",
-        "Sat",
-        "Sun"
-      ]
+      "speciality": "Haircut",
+      "available": {
+        "mon": 4,
+        "tues": 2,
+        "wed": 4,
+        "thr": 5,
+        "fri": 5
+      }
     },
     {
       "id": 7,
-      "name": "Olivia",
-      "experience": 5,
-      "specialization": "Hair Color",
-      "availableDays": [
-        "Mon",
-        "Tue",
-        "Wed",
-        "Thu",
-        "Fri",
-        "Sat",
-        "Sun"
-      ]
+      "name": "Howard",
+      "experience": 15,
+      "speciality": "Pedicure",
+      "available": {
+        "mon": 4,
+        "tues": 4,
+        "wed": 3,
+        "thr": 4,
+        "fri": 5
+      }
     },
     {
       "id": 8,
-      "name": "William",
-      "experience": 4,
-      "specialization": "Pedicure",
-      "availableDays": [
-        "Mon",
-        "Tue",
-        "Wed",
-        "Thu",
-        "Fri",
-        "Sat",
-        "Sun"
-      ]
+      "name": "Stuart",
+      "experience": 9,
+      "speciality": "Manicure",
+      "available": {
+        "mon": 4,
+        "tues": 4,
+        "wed": 4,
+        "thr": 3,
+        "fri": 2
+      }
     },
     {
       "id": 9,
-      "name": "Emma",
-      "experience": 6,
-      "specialization": "Manicure",
-      "availableDays": [
-        "Mon",
-        "Tue",
-        "Wed",
-        "Thu",
-        "Fri",
-        "Sat",
-        "Sun"
-      ]
+      "name": "Erick",
+      "experience": 7,
+      "speciality": "Haircut",
+      "available": {
+        "mon": 4,
+        "tues": 4,
+        "wed": 4,
+        "thr": 5,
+        "fri": 5
+      }
     },
     {
       "id": 10,
-      "name": "James",
+      "name": "Sheldon",
       "experience": 2,
-      "specialization": "Facial",
-      "availableDays": [
-        "Mon",
-        "Tue",
-        "Wed",
-        "Thu",
-        "Fri",
-        "Sat",
-        "Sun"
-      ]
+      "speciality": "Hair Color",
+      "available": {
+        "mon": 5,
+        "tues": 2,
+        "wed": 4,
+        "thr": 5,
+        "fri": 5
+      }
     },
     {
       "id": 11,
-      "name": "Liam",
-      "experience": 3,
-      "specialization": "Haircut",
-      "availableDays": [
-        "Mon",
-        "Tue",
-        "Wed",
-        "Thu",
-        "Fri",
-        "Sat",
-        "Sun"
-      ]
+      "name": "Leonard",
+      "experience": 4,
+      "speciality": "Pedicure",
+      "available": {
+        "mon": 5,
+        "tues": 5,
+        "wed": 3,
+        "thr": 5,
+        "fri": 5
+      }
     },
     {
       "id": 12,
-      "name": "Ava",
-      "experience": 5,
-      "specialization": "Hair Color",
-      "availableDays": [
-        "Mon",
-        "Tue",
-        "Wed",
-        "Thu",
-        "Fri",
-        "Sat",
-        "Sun"
-      ]
+      "name": "Ross",
+      "experience": 7,
+      "speciality": "Facial",
+      "available": {
+        "mon": 5,
+        "tues": 4,
+        "wed": 3,
+        "thr": 5,
+        "fri": 4
+      }
     },
     {
       "id": 13,
-      "name": "Benjamin",
-      "experience": 4,
-      "specialization": "Pedicure",
-      "availableDays": [
-        "Mon",
-        "Tue",
-        "Wed",
-        "Thu",
-        "Fri",
-        "Sat",
-        "Sun"
-      ]
+      "name": "Rachel",
+      "experience": 9,
+      "speciality": "Hair Color",
+      "available": {
+        "mon": 3,
+        "tues": 4,
+        "wed": 3,
+        "thr": 3,
+        "fri": 4
+      }
     },
     {
       "id": 14,
-      "name": "Mia",
-      "experience": 6,
-      "specialization": "Manicure",
-      "availableDays": [
-        "Mon",
-        "Tue",
-        "Wed",
-        "Thu",
-        "Fri",
-        "Sat",
-        "Sun"
-      ]
+      "name": "Sheldon",
+      "experience": 4,
+      "speciality": "Pedicure",
+      "available": {
+        "mon": 5,
+        "tues": 4,
+        "wed": 2,
+        "thr": 3,
+        "fri": 4
+      }
     },
     {
       "id": 15,
-      "name": "Ethan",
-      "experience": 2,
-      "specialization": "Facial",
-      "availableDays": [
-        "Mon",
-        "Tue",
-        "Wed",
-        "Thu",
-        "Fri",
-        "Sat",
-        "Sun"
-      ]
+      "name": "Joey",
+      "experience": 5,
+      "speciality": "Facial",
+      "available": {
+        "mon": 5,
+        "tues": 4,
+        "wed": 5,
+        "thr": 4,
+        "fri": 4
+      }
     },
     {
       "id": 16,
-      "name": "Sophia",
-      "experience": 3,
-      "specialization": "Haircut",
-      "availableDays": [
-        "Mon",
-        "Tue",
-        "Wed",
-        "Thu",
-        "Fri",
-        "Sat",
-        "Sun"
-      ]
-    },
-    {
-      "id": 17,
-      "name": "Alexander",
+      "name": "Joey",
       "experience": 5,
-      "specialization": "Hair Color",
-      "availableDays": [
-        "Mon",
-        "Tue",
-        "Wed",
-        "Thu",
-        "Fri",
-        "Sat",
-        "Sun"
-      ]
-    },
-    {
-      "id": 18,
-      "name": "Charlotte",
-      "experience": 4,
-      "specialization": "Pedicure",
-      "availableDays": [
-        "Mon",
-        "Tue",
-        "Wed",
-        "Thu",
-        "Fri",
-        "Sat",
-        "Sun"
-      ]
-    },
-    {
-      "id": 19,
-      "name": "Daniel",
-      "experience": 6,
-      "specialization": "Manicure",
-      "availableDays": [
-        "Mon",
-        "Tue",
-        "Wed",
-        "Thu",
-        "Fri",
-        "Sat",
-        "Sun"
-      ]
-    },
-    {
-      "id": 20,
-      "name": "Luna",
-      "experience": 2,
-      "specialization": "Facial",
-      "availableDays": [
-        "Mon",
-        "Tue",
-        "Wed",
-        "Thu",
-        "Fri",
-        "Sat",
-        "Sun"
-      ]
+      "speciality": "Facial",
+      "available": {
+        "mon": 5,
+        "tues": 5,
+        "wed": 5,
+        "thr": 5,
+        "fri": 4
+      }
     }
   ],
-  "appointments": [
+  "appointment": [
     {
-      "id": 1,
+      "stylistName": "Howard",
+      "stylistId": 7,
       "customerId": 1,
-      "stylistId": 1,
-      "specialityId": 1,
-      "day": "Mon"
+      "date": "tues",
+      "service": "Pedicure",
+      "id": 1
+    },
+    {
+      "stylistName": "Joey",
+      "stylistId": 15,
+      "customerId": 1,
+      "date": "tues",
+      "service": "Facial",
+      "id": 2
+    },
+    {
+      "stylistName": "Percy",
+      "stylistId": 2,
+      "customerId": 1,
+      "date": "tues",
+      "service": "Facial",
+      "id": 3
+    },
+    {
+      "stylistName": "Percy",
+      "stylistId": 2,
+      "customerId": 1,
+      "date": "tues",
+      "service": "Facial",
+      "id": 4
+    },
+    {
+      "stylistName": "Percy",
+      "stylistId": 2,
+      "customerId": 1,
+      "date": "tues",
+      "service": "Facial",
+      "id": 5
+    },
+    {
+      "stylistName": "Percy",
+      "stylistId": 2,
+      "customerId": 1,
+      "date": "tues",
+      "service": "Facial",
+      "id": 6
     }
   ]
 }
