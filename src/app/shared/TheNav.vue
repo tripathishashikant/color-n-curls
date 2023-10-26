@@ -13,9 +13,12 @@
         </router-link>
       </div>
       <div class="navigation__authenticatedLinks" v-if="isAuthenticated">
-        <a class="navigation__link navigation__link--logout">
+        <router-link
+          to="/booked-appointments"
+          class="navigation__link navigation__link--booked"
+        >
           {{ BOOKED_APPOINTMENT.TITLE }}
-        </a>
+        </router-link>
         <a class="navigation__link navigation__link--logout">
           {{ BOOK_APPOINTMENT.TITLE }}
         </a>
