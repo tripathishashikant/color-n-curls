@@ -18,6 +18,9 @@ const mutations = {
   SET_USER(state, user) {
     state.user = user;
   },
+  LOGOUT_USER(state) {
+    state.user = null;
+  },
   SET_INVALID_USER_ERROR(state, value) {
     state.invalidUser = value;
   },
@@ -67,6 +70,9 @@ const actions = {
 
       console.error("Error fetching user data:", error);
     }
+  },
+  logout({ commit }) {
+    commit("LOGOUT_USER");
   },
 };
 
