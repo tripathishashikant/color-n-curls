@@ -3,6 +3,7 @@ import { DEFAULT_BROWSER_TITLE, HOME } from "../constants/pages";
 import store from "../store";
 
 import HomeView from "../views/HomeView.vue";
+import LoginView from "../views/LoginView.vue";
 
 const routes = [
   {
@@ -15,6 +16,11 @@ const routes = [
     path: "/home",
     component: HomeView,
     meta: { title: HOME.BROWSER_TITLE },
+  },
+  {
+    path: "/login",
+    name: "login",
+    component: LoginView,
   },
 ];
 

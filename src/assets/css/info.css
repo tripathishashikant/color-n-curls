@@ -1,0 +1,8 @@
+.info__ribbon {
+  padding: 1rem;
+
+  font-size: 1.4rem;
+  color: white;
+  border: darkgreen;
+  background-color: green;
+}
