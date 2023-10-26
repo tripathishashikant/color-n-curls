@@ -4,18 +4,44 @@
       <TheLogo />
     </div>
     <div class="navigation__links">
-      <router-link to="/login" class="navigation__link navigation__link--login">
-        {{ loginLinkTitle }}
-      </router-link>
+      <div class="navigation__unAuthenticatedLinks" v-if="!isAuthenticated">
+        <router-link
+          to="/login"
+          class="navigation__link navigation__link--login"
+        >
+          {{ LOGIN.TITLE }}
+        </router-link>
+      </div>
+      <div class="navigation__authenticatedLinks" v-if="isAuthenticated">
+        <a class="navigation__link navigation__link--logout">
+          {{ BOOKED_APPOINTMENT.TITLE }}
+        </a>
+        <a class="navigation__link navigation__link--logout">
+          {{ BOOK_APPOINTMENT.TITLE }}
+        </a>
+        <a class="navigation__link navigation__link--logout">
+          {{ LOGIN.LOGOUT_TITLE }}
+        </a>
+      </div>
     </div>
   </nav>
 </template>
 
 <script setup>
-import { LOGIN } from "../../constants/pages";
+import { computed } from "vue";
+import { useStore } from "vuex";
+import {
+  LOGIN,
+  BOOKED_APPOINTMENT,
+  BOOK_APPOINTMENT,
+} from "../../constants/pages";
 import TheLogo from "./TheLogo.vue";
 
-const loginLinkTitle = LOGIN.TITLE;
+const store = useStore();
+
+const isAuthenticated = computed(
+  () => store.getters["loginStore/isAuthenticated"]
+);
 </script>
 
 <style scoped>
@@ -33,6 +59,7 @@ const loginLinkTitle = LOGIN.TITLE;
   padding: 1rem 1.5rem;
   font-size: 1.6rem;
   color: white;
+  cursor: pointer;
   text-decoration: none;
 }
 .navigation__link:hover,
