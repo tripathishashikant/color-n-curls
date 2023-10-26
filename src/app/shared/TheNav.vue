@@ -19,7 +19,7 @@
         <a class="navigation__link navigation__link--logout">
           {{ BOOK_APPOINTMENT.TITLE }}
         </a>
-        <a class="navigation__link navigation__link--logout">
+        <a class="navigation__link navigation__link--logout" @click="logout">
           {{ LOGIN.LOGOUT_TITLE }}
         </a>
       </div>
@@ -30,6 +30,7 @@
 <script setup>
 import { computed } from "vue";
 import { useStore } from "vuex";
+import { useRouter } from "vue-router";
 import {
   LOGIN,
   BOOKED_APPOINTMENT,
@@ -38,10 +39,15 @@ import {
 import TheLogo from "./TheLogo.vue";
 
 const store = useStore();
+const router = useRouter();
 
 const isAuthenticated = computed(
   () => store.getters["loginStore/isAuthenticated"]
 );
+const logout = () => {
+  store.dispatch("loginStore/logout");
+  router.push("/login");
+};
 </script>
 
 <style scoped>
