@@ -29,7 +29,14 @@ const BOOKED_APPOINTMENT = {
   BROWSER_TITLE: DEFAULT_BROWSER_TITLE + seperator + "Booked Appointment Page",
 };
 
+const PROFILE = {
+  TITLE: "Update Profile",
+  BROWSER_TITLE: DEFAULT_BROWSER_TITLE + seperator + "Update Profile Page",
+  SUBMIT_BTN: "Update",
+};
+
 const ERRORS = {
+  TIMEOUT: 5000,
   INVALID_USER: "Invalid User!",
   SERVICE_UNAVAILABLE: "Service Unavailable. Please try again after sometime!",
   REQUIRED: "This field is required.",
@@ -44,7 +51,9 @@ const ERRORS = {
 };
 
 const INFO = {
+  TIMEOUT: 5000,
   REGISTER_SUCCESSFULLY: "Customer register successfully!",
+  UPDATED_SUCCESSFULLY: "Customer record updated successfully!",
 };
 
 export {
@@ -56,4 +65,5 @@ export {
   BOOKED_APPOINTMENT,
   ERRORS,
   INFO,
+  PROFILE,
 };
