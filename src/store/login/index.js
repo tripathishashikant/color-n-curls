@@ -1,26 +1,19 @@
 import { fetchWithGet } from "@/services/axios";
 const state = {
-  user: null,
   invalidUser: false,
   fetchUserError: false,
   redirectTo: null,
 };
 
 const getters = {
-  isAuthenticated: (state) => state.user !== null,
+  isAuthenticated: (state, getters, rootState) =>
+    rootState.customerStore.customer !== null,
   isInvalidUser: (state) => state.invalidUser,
   isfetchUserError: (state) => state.fetchUserError,
   redirectTo: (state) => state.redirectTo,
-  getUser: (state) => state.user,
 };
 
 const mutations = {
-  SET_USER(state, user) {
-    state.user = user;
-  },
-  LOGOUT_USER(state) {
-    state.user = null;
-  },
   SET_INVALID_USER_ERROR(state, value) {
     state.invalidUser = value;
   },
@@ -33,9 +26,6 @@ const mutations = {
 };
 
 const actions = {
-  setUser({ commit }, user) {
-    commit("SET_USER", user);
-  },
   setInvalidUserError({ commit }, value) {
     commit("SET_INVALID_USER_ERROR", value);
   },
@@ -45,7 +35,7 @@ const actions = {
   setRedirectTo({ commit }, value) {
     commit("SET_REDIRECT_TO", value);
   },
-  async login({ commit, dispatch }, loginData) {
+  async login({ dispatch }, loginData) {
     try {
       const response = await fetchWithGet("/customer");
       const users = response.data;
@@ -55,7 +45,7 @@ const actions = {
       );
 
       if (currentUser.length > 0) {
-        commit("SET_USER", currentUser[0]);
+        dispatch("customerStore/setCustomer", currentUser[0], { root: true });
         dispatch("setRedirectTo", "/home");
         dispatch("setInvalidUserError", false);
       } else {
@@ -71,8 +61,8 @@ const actions = {
       console.error("Error fetching user data:", error);
     }
   },
-  logout({ commit }) {
-    commit("LOGOUT_USER");
+  logout({ dispatch }) {
+    dispatch("customerStore/setCustomer", null, { root: true });
   },
 };
 
