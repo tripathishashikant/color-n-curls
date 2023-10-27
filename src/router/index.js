@@ -4,12 +4,14 @@ import {
   HOME,
   LOGIN,
   BOOKED_APPOINTMENT,
+  PROFILE,
 } from "../constants/pages";
 import store from "../store";
 
 import HomeView from "../views/HomeView.vue";
 import LoginView from "../views/LoginView.vue";
 import BookedAppointments from "../views/BookedAppointmentsView.vue";
+import Profile from "../views/ProfileView.vue";
 
 const routes = [
   {
@@ -36,6 +38,15 @@ const routes = [
     meta: {
       requiresAuth: true,
       title: BOOKED_APPOINTMENT.BROWSER_TITLE,
+    },
+  },
+  {
+    path: "/profile",
+    name: "profile",
+    component: Profile,
+    meta: {
+      requiresAuth: true,
+      title: PROFILE.BROWSER_TITLE,
     },
   },
 ];

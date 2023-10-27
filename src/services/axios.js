@@ -12,9 +12,12 @@ const fetchWithGet = (path) => {
   return api.get(path);
 };
 
-// Add the fetchWithPost method
 const fetchWithPost = (path, data) => {
   return api.post(path, data);
+};
+
+const updateRecord = (path, id, data) => {
+  return api.put(`${path}/${id}`, data);
 };
 
 api.interceptors.request.use(
@@ -40,4 +43,4 @@ api.interceptors.response.use(
 
 export default api;
 
-export { fetchWithGet, fetchWithPost };
+export { fetchWithGet, fetchWithPost, updateRecord };

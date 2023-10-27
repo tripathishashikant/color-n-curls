@@ -22,9 +22,29 @@
         <a class="navigation__link navigation__link--logout">
           {{ BOOK_APPOINTMENT.TITLE }}
         </a>
-        <a class="navigation__link navigation__link--logout" @click="logout">
-          {{ LOGIN.LOGOUT_TITLE }}
-        </a>
+        <div class="navigation__link navigation__link--user">
+          <span>{{ customer.name }}</span>
+          <div class="navigation__dropdown">
+            <ul>
+              <li>
+                <router-link
+                  to="/profile"
+                  class="navigation__link navigation__link--updateProfile"
+                >
+                  {{ PROFILE.TITLE }}
+                </router-link>
+              </li>
+              <li>
+                <a
+                  class="navigation__link navigation__link--logout"
+                  @click="logout"
+                >
+                  {{ LOGIN.LOGOUT_TITLE }}
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </nav>
@@ -38,15 +58,20 @@ import {
   LOGIN,
   BOOKED_APPOINTMENT,
   BOOK_APPOINTMENT,
+  PROFILE,
 } from "../../constants/pages";
 import TheLogo from "./TheLogo.vue";
 
 const store = useStore();
 const router = useRouter();
 
+// computed
 const isAuthenticated = computed(
   () => store.getters["loginStore/isAuthenticated"]
 );
+const customer = computed(() => store.getters["customerStore/getCustomer"]);
+
+// methods
 const logout = () => {
   store.dispatch("loginStore/logout");
   router.push("/login");
@@ -81,26 +106,30 @@ const logout = () => {
 .navigation__link--user:hover .navigation__dropdown {
   display: block;
 }
-
 .navigation__dropdown {
+  padding: 1rem 0;
   display: none;
   position: absolute;
   top: 100%;
-  right: 0.5rem;
+  right: 0;
+  border: 0.1rem solid transparent;
+  border-radius: 0.5rem;
   background-color: white;
+  box-shadow: 0 0 3px 0 black;
 }
 .navigation__dropdown ul {
   padding: 0;
   margin: 0;
   list-style: none;
 }
-.navigation__dropdown li {
+.navigation__dropdown a {
+  display: block;
   padding: 1rem;
-  color: black;
-  cursor: pointer;
-  box-shadow: 0 0 3px 0 black;
-}
 
+  font-size: 1.4rem;
+  white-space: nowrap;
+  color: black;
+}
 .navigation__logo {
   flex: 0 1 20rem;
 }
