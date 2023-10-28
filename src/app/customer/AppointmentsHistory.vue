@@ -77,16 +77,17 @@ onMounted(() => {
 .appointments__ul {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: stretch;
 
   padding: 0;
+  margin: -1rem;
   list-style: none;
 }
 .appointments__list {
-  flex: 0 1 33%;
+  flex: 0 1 32%;
   padding: 1rem;
-  margin-bottom: 1rem;
+  margin: 0 0.5rem 1rem;
   border: 0.1rem solid black;
   border-radius: 0.5rem;
 }

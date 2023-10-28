@@ -1,14 +1,16 @@
-import { fetchWithGet } from "@/services/axios";
-import { ERRORS } from "../../constants/pages";
+import { fetchWithGet, fetchWithPost } from "@/services/axios";
+import { ERRORS, INFO } from "../../constants/pages";
 
 const state = {
   appointments: null,
   serviceError: false,
+  isAppointmentAdded: false,
 };
 
 const getters = {
   getAppointments: (state) => state.customer,
   serviceError: (state) => state.serviceError,
+  isAppointmentAdded: (state) => state.isAppointmentAdded,
 };
 
 const mutations = {
@@ -17,6 +19,9 @@ const mutations = {
   },
   SET_SERVICE_ERROR(state, value) {
     state.serviceError = value;
+  },
+  SET_IS_APPOINTMENT_ADDED(state, value) {
+    state.isAppointmentAdded = value;
   },
 };
 
@@ -33,11 +38,31 @@ const actions = {
       commit("SET_SERVICE_ERROR", false);
     }, ERRORS.TIMEOUT);
   },
+  setIsAppointmentAdded({ commit, dispatch }, value) {
+    commit("SET_IS_APPOINTMENT_ADDED", value);
+    dispatch("setInfoRibbonVisibility", "SET_IS_APPOINTMENT_ADDED");
+  },
+  setInfoRibbonVisibility({ commit }, muttionName) {
+    setTimeout(() => {
+      commit(muttionName, false);
+    }, INFO.TIMEOUT);
+  },
   async fetchAppointments({ commit, dispatch }) {
     try {
       const response = await fetchWithGet("/appointment");
       const appointments = response.data;
       commit("SET_APPOINTMENTS", appointments);
+    } catch (error) {
+      console.error("Service Error while fetch stock details. ", error);
+
+      dispatch("setServiceError", true);
+    }
+  },
+  async addAppointment({ dispatch }, bookingDetails) {
+    try {
+      await fetchWithPost("/appointment", bookingDetails);
+      dispatch("setIsAppointmentAdded", true);
+      dispatch("fetchAppointments");
     } catch (error) {
       console.error("Service Error while fetch stock details. ", error);
 

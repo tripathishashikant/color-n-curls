@@ -5,6 +5,7 @@ import {
   LOGIN,
   APPOINTMENT_HISTORY,
   PROFILE,
+  BOOK_APPOINTMENT,
 } from "../constants/pages";
 import store from "../store";
 
@@ -12,6 +13,7 @@ import HomeView from "../views/HomeView.vue";
 import LoginView from "../views/LoginView.vue";
 import AppointmentHistory from "../views/AppointmentHistoryView.vue";
 import Profile from "../views/ProfileView.vue";
+import BookAppointment from "../views/BookAppointmentView.vue";
 
 const routes = [
   {
@@ -38,6 +40,15 @@ const routes = [
     meta: {
       requiresAuth: true,
       title: APPOINTMENT_HISTORY.BROWSER_TITLE,
+    },
+  },
+  {
+    path: "/book-appointment",
+    name: "bookAppointment",
+    component: BookAppointment,
+    meta: {
+      requiresAuth: true,
+      title: BOOK_APPOINTMENT.BROWSER_TITLE,
     },
   },
   {

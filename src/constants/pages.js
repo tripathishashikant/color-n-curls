@@ -22,6 +22,8 @@ const REGISTER = {
 const BOOK_APPOINTMENT = {
   TITLE: "Book Appointment",
   BROWSER_TITLE: DEFAULT_BROWSER_TITLE + seperator + "Book Appointment Page",
+  SUBTITLE: "Select your person to change your world",
+  DESCRIPTION: "Click and select the speciality that you want to choose from",
 };
 
 const APPOINTMENT_HISTORY = {
@@ -55,6 +57,7 @@ const INFO = {
   TIMEOUT: 5000,
   REGISTER_SUCCESSFULLY: "Customer register successfully!",
   UPDATED_SUCCESSFULLY: "Customer record updated successfully!",
+  BOOKED_SUCCESSFULLY: "Appointment booked successfully!",
 };
 
 export {

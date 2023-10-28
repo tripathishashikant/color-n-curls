@@ -71,6 +71,10 @@ button:hover {
   background: orange;
 }
 
+button:disabled {
+  background: gray;
+}
+
 .header {
   min-height: 3.9rem;
   background-color: orangered;
