@@ -1,4 +1,4 @@
-import { fetchWithGet, updateRecord } from "@/services/axios";
+import { fetchWithGet, fetchWithPost, updateRecord } from "@/services/axios";
 import { ERRORS, INFO } from "../../constants/pages";
 
 const state = {
@@ -34,32 +34,43 @@ const actions = {
   setCustomer({ commit }, data) {
     commit("SET_CUSTOMER", data);
   },
-  setServiceError({ commit, dispatch }, value) {
-    commit("SET_SERVICE_ERROR", value);
-    dispatch("setErrorRibbonVisibility");
-  },
   setErrorRibbonVisibility({ commit }) {
     setTimeout(() => {
       commit("SET_SERVICE_ERROR", false);
     }, ERRORS.TIMEOUT);
   },
-  setIsCustomerAdded({ commit }, value) {
+  setServiceError({ commit, dispatch }, value) {
+    commit("SET_SERVICE_ERROR", value);
+    dispatch("setErrorRibbonVisibility");
+  },
+  setInfoRibbonVisibility({ commit }, muttionName) {
+    setTimeout(() => {
+      commit(muttionName, false);
+    }, INFO.TIMEOUT);
+  },
+  setIsCustomerAdded({ commit, dispatch }, value) {
     commit("SET_IS_CUSTOMER_ADDED", value);
+    dispatch("setInfoRibbonVisibility", "SET_IS_CUSTOMER_ADDED");
   },
   setIsCustomerUpdated({ commit, dispatch }, value) {
     commit("SET_IS_CUSTOMER_UPDATED", value);
-    dispatch("setInfoRibbonVisibility");
-  },
-  setInfoRibbonVisibility({ commit }) {
-    setTimeout(() => {
-      commit("SET_IS_CUSTOMER_UPDATED", false);
-    }, INFO.TIMEOUT);
+    dispatch("setInfoRibbonVisibility", "SET_IS_CUSTOMER_UPDATED");
   },
   async fetchCustomer({ commit, dispatch }) {
     try {
       const response = await fetchWithGet("/customer");
       const customer = response.data;
       commit("SET_CUSTOMER", customer);
+    } catch (error) {
+      console.error("Service Error while fetch stock details. ", error);
+
+      dispatch("setServiceError", true);
+    }
+  },
+  async addCustomer({ dispatch }, newCustomer) {
+    try {
+      await fetchWithPost("/customer", newCustomer);
+      dispatch("setIsCustomerAdded", true);
     } catch (error) {
       console.error("Service Error while fetch stock details. ", error);
 
