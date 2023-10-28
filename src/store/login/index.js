@@ -1,4 +1,5 @@
 import { fetchWithGet } from "@/services/axios";
+
 const state = {
   invalidUser: false,
   fetchUserError: false,
@@ -62,6 +63,7 @@ const actions = {
     }
   },
   logout({ dispatch }) {
+    dispatch("setRedirectTo", null);
     dispatch("customerStore/setCustomer", null, { root: true });
   },
 };

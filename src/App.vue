@@ -3,7 +3,7 @@
     <header class="app__header header">
       <TheNav />
     </header>
-    <main id="mainContent" class="app_module module">
+    <main id="mainContent" class="app__module module">
       <router-view />
     </main>
   </div>
@@ -74,5 +74,9 @@ button:hover {
 .header {
   min-height: 3.9rem;
   background-color: orangered;
+}
+
+.app__module {
+  padding: 0 1.5rem;
 }
 </style>

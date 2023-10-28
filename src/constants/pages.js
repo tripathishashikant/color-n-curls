@@ -24,9 +24,10 @@ const BOOK_APPOINTMENT = {
   BROWSER_TITLE: DEFAULT_BROWSER_TITLE + seperator + "Book Appointment Page",
 };
 
-const BOOKED_APPOINTMENT = {
-  TITLE: "Booked Appointment",
-  BROWSER_TITLE: DEFAULT_BROWSER_TITLE + seperator + "Booked Appointment Page",
+const APPOINTMENT_HISTORY = {
+  TITLE: "Appointment History",
+  BROWSER_TITLE: DEFAULT_BROWSER_TITLE + seperator + "Appointment History Page",
+  NO_APPOINTMENT: "You have not made any appointments yet.",
 };
 
 const PROFILE = {
@@ -62,7 +63,7 @@ export {
   LOGIN,
   REGISTER,
   BOOK_APPOINTMENT,
-  BOOKED_APPOINTMENT,
+  APPOINTMENT_HISTORY,
   ERRORS,
   INFO,
   PROFILE,

@@ -14,10 +14,10 @@
       </div>
       <div class="navigation__authenticatedLinks" v-if="isAuthenticated">
         <router-link
-          to="/booked-appointments"
+          to="/appointment-history"
           class="navigation__link navigation__link--booked"
         >
-          {{ BOOKED_APPOINTMENT.TITLE }}
+          {{ APPOINTMENT_HISTORY.TITLE }}
         </router-link>
         <a class="navigation__link navigation__link--logout">
           {{ BOOK_APPOINTMENT.TITLE }}
@@ -56,7 +56,7 @@ import { useStore } from "vuex";
 import { useRouter } from "vue-router";
 import {
   LOGIN,
-  BOOKED_APPOINTMENT,
+  APPOINTMENT_HISTORY,
   BOOK_APPOINTMENT,
   PROFILE,
 } from "../../constants/pages";

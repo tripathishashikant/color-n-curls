@@ -3,14 +3,14 @@ import {
   DEFAULT_BROWSER_TITLE,
   HOME,
   LOGIN,
-  BOOKED_APPOINTMENT,
+  APPOINTMENT_HISTORY,
   PROFILE,
 } from "../constants/pages";
 import store from "../store";
 
 import HomeView from "../views/HomeView.vue";
 import LoginView from "../views/LoginView.vue";
-import BookedAppointments from "../views/BookedAppointmentsView.vue";
+import AppointmentHistory from "../views/AppointmentHistoryView.vue";
 import Profile from "../views/ProfileView.vue";
 
 const routes = [
@@ -32,12 +32,12 @@ const routes = [
     meta: { title: LOGIN.BROWSER_TITLE },
   },
   {
-    path: "/booked-appointments",
-    name: "booked",
-    component: BookedAppointments,
+    path: "/appointment-history",
+    name: "appointmentHistory",
+    component: AppointmentHistory,
     meta: {
       requiresAuth: true,
-      title: BOOKED_APPOINTMENT.BROWSER_TITLE,
+      title: APPOINTMENT_HISTORY.BROWSER_TITLE,
     },
   },
   {
