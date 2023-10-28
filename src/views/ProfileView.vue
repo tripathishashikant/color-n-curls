@@ -23,7 +23,7 @@ import UpdateProfile from "../app/customer/UpdateProfile.vue";
 .profileView__wrapper {
   width: 100%;
   max-width: 50%;
-  padding: 1rem 1.5rem;
+  padding: 1rem 0;
   box-shadow: 0px 1px 3px -1px rgba(0, 0, 0, 0.74);
   background-color: #ece3d5;
 }

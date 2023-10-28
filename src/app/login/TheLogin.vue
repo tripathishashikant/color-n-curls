@@ -74,13 +74,11 @@ const isInvalidUser = computed(() => store.getters["loginStore/isInvalidUser"]);
 const isfetchUserError = computed(
   () => store.getters["loginStore/isfetchUserError"]
 );
+const redirectTo = computed(() => store.getters["loginStore/redirectTo"]);
 
-watch(
-  () => store.getters["loginStore/redirectTo"],
-  (newValue) => {
-    router.push(newValue);
-  }
-);
+watch(redirectTo, (newValue) => {
+  router.push(newValue);
+});
 
 const onSubmit = () => {
   store.dispatch("loginStore/login", loginData);
