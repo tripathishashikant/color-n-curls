@@ -3,6 +3,8 @@ import bannerStore from "./banner";
 import loginStore from "./login";
 import customerStore from "./customer";
 import appointmentStore from "./appointments";
+import specialityStore from "./speciality";
+import stylistStore from "./stylist";
 
 const mainState = {};
 
@@ -22,6 +24,8 @@ const store = createStore({
     loginStore,
     customerStore,
     appointmentStore,
+    specialityStore,
+    stylistStore,
   },
 });
 

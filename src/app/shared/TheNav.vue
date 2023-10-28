@@ -15,13 +15,16 @@
       <div class="navigation__authenticatedLinks" v-if="isAuthenticated">
         <router-link
           to="/appointment-history"
-          class="navigation__link navigation__link--booked"
+          class="navigation__link navigation__link--appointmentHistory"
         >
           {{ APPOINTMENT_HISTORY.TITLE }}
         </router-link>
-        <a class="navigation__link navigation__link--logout">
+        <router-link
+          to="/book-appointment"
+          class="navigation__link navigation__link--bookedAppointment"
+        >
           {{ BOOK_APPOINTMENT.TITLE }}
-        </a>
+        </router-link>
         <div class="navigation__link navigation__link--user">
           <span>{{ customer.name }}</span>
           <div class="navigation__dropdown">
