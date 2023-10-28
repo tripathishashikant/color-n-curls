@@ -8,7 +8,7 @@ import TheBanner from "../app/shared/TheBanner.vue";
 
 <style scoped>
 .home {
-  padding: 2rem 1.5;
+  padding: 2rem 0;
   text-align: center;
 }
 .home__title {

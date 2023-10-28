@@ -17,7 +17,7 @@ const subTitle = computed(() => store.getters["bannerStore/getSubTitle"]);
 
 <style scoped>
 .banner {
-  padding: 2rem 1.5;
+  padding: 2rem 1.5rem;
   text-align: center;
 }
 .banner__title {
