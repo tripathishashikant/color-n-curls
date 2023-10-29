@@ -26,8 +26,8 @@ const mutations = {
 };
 
 const actions = {
-  setCustomer({ commit }, data) {
-    commit("SET_CUSTOMER", data);
+  setAppointment({ commit }, data) {
+    commit("SET_APPOINTMENTS", data);
   },
   setServiceError({ commit, dispatch }, value) {
     commit("SET_SERVICE_ERROR", value);
@@ -47,11 +47,11 @@ const actions = {
       commit(muttionName, false);
     }, INFO.TIMEOUT);
   },
-  async fetchAppointments({ commit, dispatch }) {
+  async fetchAppointments({ dispatch }) {
     try {
       const response = await fetchWithGet("/appointment");
       const appointments = response.data;
-      commit("SET_APPOINTMENTS", appointments);
+      dispatch("setAppointment", appointments);
     } catch (error) {
       console.error("Service Error while fetch stock details. ", error);
 
