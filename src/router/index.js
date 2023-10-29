@@ -6,6 +6,7 @@ import {
   APPOINTMENT_HISTORY,
   PROFILE,
   BOOK_APPOINTMENT,
+  NOT_FOUND,
 } from "../constants/pages";
 import store from "../store";
 
@@ -14,6 +15,7 @@ import LoginView from "../views/LoginView.vue";
 import AppointmentHistory from "../views/AppointmentHistoryView.vue";
 import Profile from "../views/ProfileView.vue";
 import BookAppointment from "../views/BookAppointmentView.vue";
+import NotFound from "../views/NotFoundView.vue";
 
 const routes = [
   {
@@ -25,13 +27,28 @@ const routes = [
     name: "home",
     path: "/home",
     component: HomeView,
-    meta: { title: HOME.BROWSER_TITLE },
+    meta: {
+      requiresAuth: false,
+      title: HOME.BROWSER_TITLE,
+    },
   },
   {
     path: "/login",
     name: "login",
     component: LoginView,
-    meta: { title: LOGIN.BROWSER_TITLE },
+    meta: {
+      requiresAuth: false,
+      title: LOGIN.BROWSER_TITLE,
+    },
+  },
+  {
+    name: "notFound",
+    path: "/:notFound(.*)",
+    component: NotFound,
+    meta: {
+      requiresAuth: false,
+      title: NOT_FOUND.BROWSER_TITLE,
+    },
   },
   {
     path: "/appointment-history",
