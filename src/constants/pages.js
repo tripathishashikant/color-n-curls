@@ -38,6 +38,11 @@ const PROFILE = {
   SUBMIT_BTN: "Update",
 };
 
+const NOT_FOUND = {
+  TITLE: "Not Found",
+  BROWSER_TITLE: DEFAULT_BROWSER_TITLE + seperator + "Not Found Page",
+};
+
 const ERRORS = {
   TIMEOUT: 5000,
   INVALID_USER: "Invalid User!",
@@ -70,4 +75,5 @@ export {
   ERRORS,
   INFO,
   PROFILE,
+  NOT_FOUND,
 };

@@ -130,7 +130,7 @@
             <button
               class="register__btn"
               type="submit"
-              :disabled="!submitted"
+              :disabled="hasError === null ? true : hasError"
               @click.prevent="register()"
             >
               {{ REGISTER.TITLE }}
@@ -148,7 +148,7 @@
 </template>
 
 <script setup>
-import { ref, reactive, defineEmits, computed } from "vue";
+import { reactive, defineEmits, computed, onMounted } from "vue";
 import { useStore } from "vuex";
 import { REGISTER, ERRORS, INFO } from "../../constants/pages";
 
@@ -165,37 +165,34 @@ const formFields = reactive({
 
 const validation = reactive({
   name: {
-    required: false,
-    maxLength: false,
-    characters: false,
+    required: null,
+    maxLength: null,
+    characters: null,
   },
   password: {
-    required: false,
-    minLength: false,
-    lowerCase: false,
-    upperCase: false,
-    characters: false,
+    required: null,
+    minLength: null,
+    lowerCase: null,
+    upperCase: null,
+    characters: null,
   },
   email: {
-    required: false,
-    format: false,
+    required: null,
+    format: null,
   },
   dob: {
-    required: false,
-    format: false,
+    required: null,
+    format: null,
   },
 });
 
-const submitted = ref(false);
-
 // computed
-const isValidName = computed(() => {
-  return (
+const isValidName = computed(
+  () =>
     validation.name.required ||
     validation.name.maxLength ||
     validation.name.characters
-  );
-});
+);
 
 const isValidPassword = computed(
   () =>
@@ -222,6 +219,19 @@ const isCustomerAdded = computed(
   () => store.getters["customerStore/isCustomerAdded"]
 );
 
+const hasError = computed(
+  () =>
+    isValidName.value ||
+    isValidPassword.value ||
+    isValidEmail.value ||
+    isValidDOB.value
+);
+
+// life cycle hook
+onMounted(() => {
+  console.log("hasError ", hasError.value);
+});
+
 // methods
 const validateName = () => {
   const regex = /^[A-Za-z ]*$/;
@@ -237,7 +247,6 @@ const validateName = () => {
   validation.name.required = formFields.name === "";
   validation.name.maxLength = formFields.name.length > 30;
   validation.name.characters = !regex.test(formFields.name);
-  checkAllFieldsValid();
 };
 
 const validatePassword = () => {
@@ -260,7 +269,6 @@ const validatePassword = () => {
   validation.password.characters = !regexPassword.test(formFields.password);
   validation.password.lowerCase = !regexLowerCase.test(formFields.password);
   validation.password.upperCase = !regexUpperCase.test(formFields.password);
-  checkAllFieldsValid();
 };
 
 const validateEmail = () => {
@@ -270,12 +278,11 @@ const validateEmail = () => {
     validation.email.required = true;
     validation.email.format = true;
 
-    return true;
+    return;
   }
 
   validation.email.required = formFields.email === "";
   validation.email.format = !regex.test(formFields.email);
-  checkAllFieldsValid();
 };
 
 const validateDOB = () => {
@@ -284,12 +291,11 @@ const validateDOB = () => {
   if (formFields.password === null) {
     validation.dob.required = true;
     validation.dob.format = true;
-    return true;
+    return;
   }
 
   validation.dob.required = formFields.dob === "";
   validation.dob.format = !dobRegex.test(formFields.dob);
-  checkAllFieldsValid();
 };
 
 const clearFormFields = () => {
@@ -297,7 +303,6 @@ const clearFormFields = () => {
   formFields.password = null;
   formFields.email = null;
   formFields.dob = null;
-  submitted.value = false;
 };
 
 const openLoginModule = () => {
@@ -307,24 +312,15 @@ const openLoginModule = () => {
   emit("openLoginPage");
 };
 
-const checkAllFieldsValid = () => {
-  submitted.value = !(
-    isValidName.value ||
-    isValidPassword.value ||
-    isValidEmail.value ||
-    isValidDOB.value
-  );
-};
-
 const register = () => {
-  if (!submitted.value) {
+  if (hasError.value) {
     return false;
   }
 
-  validateName();
-  validatePassword();
-  validateEmail();
-  validateDOB();
+  // validateName();
+  // validatePassword();
+  // validateEmail();
+  // validateDOB();
 
   const newCustomerDetails = {
     name: formFields.name,

@@ -26,7 +26,7 @@
           {{ BOOK_APPOINTMENT.TITLE }}
         </router-link>
         <div class="navigation__link navigation__link--user">
-          <span>{{ customer.name }}</span>
+          <span>{{ customerName }}</span>
           <div class="navigation__dropdown">
             <ul>
               <li>
@@ -72,7 +72,9 @@ const router = useRouter();
 const isAuthenticated = computed(
   () => store.getters["loginStore/isAuthenticated"]
 );
-const customer = computed(() => store.getters["customerStore/getCustomer"]);
+const customerName = computed(
+  () => store.getters["customerStore/getCustomerName"]
+);
 
 // methods
 const logout = () => {

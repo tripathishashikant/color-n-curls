@@ -10,6 +10,7 @@ const state = {
 
 const getters = {
   getCustomer: (state) => state.customer,
+  getCustomerName: (state) => state.customer && state.customer.name,
   serviceError: (state) => state.serviceError,
   isCustomerAdded: (state) => state.isCustomerAdded,
   isCustomerUpdated: (state) => state.isCustomerUpdated,
@@ -56,11 +57,15 @@ const actions = {
     commit("SET_IS_CUSTOMER_UPDATED", value);
     dispatch("setInfoRibbonVisibility", "SET_IS_CUSTOMER_UPDATED");
   },
-  async fetchCustomer({ commit, dispatch }) {
+  async fetchCustomer({ dispatch }, id) {
     try {
       const response = await fetchWithGet("/customer");
-      const customer = response.data;
-      commit("SET_CUSTOMER", customer);
+      const users = response.data;
+      const currentUser = users.filter((user) => user.id === id);
+
+      if (currentUser.length > 0) {
+        dispatch("setCustomer", currentUser[0]);
+      }
     } catch (error) {
       console.error("Service Error while fetch stock details. ", error);
 
@@ -80,7 +85,7 @@ const actions = {
   async updateCustomer({ dispatch }, updatedValue) {
     try {
       await updateRecord("/customer", updatedValue.id, updatedValue);
-      dispatch("fetchCustomer");
+      dispatch("fetchCustomer", updatedValue.id);
       dispatch("setIsCustomerUpdated", true);
     } catch (error) {
       console.error("Service Error while fetch stock details. ", error);

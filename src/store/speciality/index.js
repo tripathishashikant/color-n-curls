@@ -21,8 +21,8 @@ const mutations = {
 };
 
 const actions = {
-  setCustomer({ commit }, data) {
-    commit("SET_CUSTOMER", data);
+  setSpeciality({ commit }, data) {
+    commit("SET_SPECIALITY", data);
   },
   setServiceError({ commit, dispatch }, value) {
     commit("SET_SERVICE_ERROR", value);
@@ -33,11 +33,11 @@ const actions = {
       commit("SET_SERVICE_ERROR", false);
     }, ERRORS.TIMEOUT);
   },
-  async fetchSpeciality({ commit, dispatch }) {
+  async fetchSpeciality({ dispatch }) {
     try {
       const response = await fetchWithGet("/speciality");
       const speciality = response.data;
-      commit("SET_SPECIALITY", speciality);
+      dispatch("setSpeciality", speciality);
     } catch (error) {
       console.error("Service Error while fetch stock details. ", error);
 
