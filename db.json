@@ -1,7 +1,7 @@
 {
   "customer": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Penny",
       "password": "Abc@123",
       "email": "penny@gmail.com",
@@ -10,29 +10,29 @@
   ],
   "speciality": [
     {
-      "id": 1,
+      "id": "1",
       "speciality": "Haircut"
     },
     {
-      "id": 2,
+      "id": "2",
       "speciality": "Hair Color"
     },
     {
-      "id": 3,
+      "id": "3",
       "speciality": "Pedicure"
     },
     {
-      "id": 4,
+      "id": "4",
       "speciality": "Manicure"
     },
     {
-      "id": 5,
+      "id": "5",
       "speciality": "Facial"
     }
   ],
   "stylist": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Anne",
       "experience": 5,
       "speciality": "Pedicure",
@@ -45,12 +45,12 @@
       }
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Percy",
       "experience": 3,
       "speciality": "Facial",
       "available": {
-        "mon": 5,
+        "mon": 4,
         "tues": -1,
         "wed": 4,
         "thr": 2,
@@ -58,7 +58,7 @@
       }
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Leo",
       "experience": 8,
       "speciality": "Manicure",
@@ -71,7 +71,7 @@
       }
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Rick",
       "experience": 1,
       "speciality": "Hair Color",
@@ -84,7 +84,7 @@
       }
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Rick",
       "experience": 9,
       "speciality": "Haircut",
@@ -93,11 +93,11 @@
         "tues": 3,
         "wed": 5,
         "thr": 4,
-        "fri": 5
+        "fri": 4
       }
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Apollo",
       "experience": 3,
       "speciality": "Haircut",
@@ -110,7 +110,7 @@
       }
     },
     {
-      "id": 7,
+      "id": "7",
       "name": "Howard",
       "experience": 15,
       "speciality": "Pedicure",
@@ -123,12 +123,12 @@
       }
     },
     {
-      "id": 8,
+      "id": "8",
       "name": "Stuart",
       "experience": 9,
       "speciality": "Manicure",
       "available": {
-        "mon": 4,
+        "mon": 3,
         "tues": 4,
         "wed": 4,
         "thr": 3,
@@ -136,7 +136,7 @@
       }
     },
     {
-      "id": 9,
+      "id": "9",
       "name": "Erick",
       "experience": 7,
       "speciality": "Haircut",
@@ -149,7 +149,7 @@
       }
     },
     {
-      "id": 10,
+      "id": "10",
       "name": "Sheldon",
       "experience": 2,
       "speciality": "Hair Color",
@@ -162,7 +162,7 @@
       }
     },
     {
-      "id": 11,
+      "id": "11",
       "name": "Leonard",
       "experience": 4,
       "speciality": "Pedicure",
@@ -175,7 +175,7 @@
       }
     },
     {
-      "id": 12,
+      "id": "12",
       "name": "Ross",
       "experience": 7,
       "speciality": "Facial",
@@ -188,7 +188,7 @@
       }
     },
     {
-      "id": 13,
+      "id": "13",
       "name": "Rachel",
       "experience": 9,
       "speciality": "Hair Color",
@@ -201,7 +201,7 @@
       }
     },
     {
-      "id": 14,
+      "id": "14",
       "name": "Sheldon",
       "experience": 4,
       "speciality": "Pedicure",
@@ -214,12 +214,12 @@
       }
     },
     {
-      "id": 15,
+      "id": "15",
       "name": "Joey",
       "experience": 5,
       "speciality": "Facial",
       "available": {
-        "mon": 5,
+        "mon": 4,
         "tues": 4,
         "wed": 5,
         "thr": 4,
@@ -227,7 +227,7 @@
       }
     },
     {
-      "id": 16,
+      "id": "16",
       "name": "Joey",
       "experience": 5,
       "speciality": "Facial",
@@ -247,7 +247,7 @@
       "customerId": 1,
       "date": "tues",
       "service": "Pedicure",
-      "id": 1
+      "id": "1"
     },
     {
       "stylistName": "Joey",
@@ -255,7 +255,7 @@
       "customerId": 1,
       "date": "tues",
       "service": "Facial",
-      "id": 2
+      "id": "2"
     },
     {
       "stylistName": "Percy",
@@ -263,7 +263,7 @@
       "customerId": 1,
       "date": "tues",
       "service": "Facial",
-      "id": 3
+      "id": "3"
     },
     {
       "stylistName": "Percy",
@@ -271,7 +271,7 @@
       "customerId": 1,
       "date": "tues",
       "service": "Facial",
-      "id": 4
+      "id": "4"
     },
     {
       "stylistName": "Percy",
@@ -279,7 +279,7 @@
       "customerId": 1,
       "date": "tues",
       "service": "Facial",
-      "id": 5
+      "id": "5"
     },
     {
       "stylistName": "Percy",
@@ -287,7 +287,40 @@
       "customerId": 1,
       "date": "tues",
       "service": "Facial",
-      "id": 6
+      "id": "6"
+    },
+    {
+      "stylistName": "Percy",
+      "stylistId": 2,
+      "customerId": 1,
+      "date": "mon",
+      "service": "Facial",
+      "id": "7"
+    },
+    {
+      "stylistName": "Joey",
+      "stylistId": 15,
+      "customerId": 1,
+      "date": "mon",
+      "service": "Facial",
+      "id": "8"
+    },
+    {
+      "id": "f612",
+      "stylistName": "Rick",
+      "stylistId": "5",
+      "customerId": "1",
+      "date": "fri",
+      "service": "Haircut"
+    },
+    {
+      "stylistName": "Stuart",
+      "stylistId": "8",
+      "customerId": "1",
+      "date": "mon",
+      "service": "Manicure",
+      "id": "xcUFQWIhXc4"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
